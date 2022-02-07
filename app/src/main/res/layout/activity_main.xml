@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:contentDescription="@string/app_name"
+    android:fillViewport="true"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="0dp">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="0dp"
+        android:background="#FFFFFF"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:id="@+id/parentContainer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context=".MainActivity">
+
+            <include
+                android:id="@+id/upperBody"
+                layout="@layout/section_layout"
+                android:background="@color/darkGray" />
+
+            <include
+                android:id="@+id/topBody"
+                layout="@layout/section_layout" />
+
+            <include
+                android:id="@+id/middleBody"
+                layout="@layout/section_layout" />
+
+            <include
+                android:id="@+id/lowerBody"
+                layout="@layout/section_layout" />
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

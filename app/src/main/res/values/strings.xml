@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">PASI score count</string>
+    <string name="area">Area (%)</string>
+    <string name="redness">Redness</string>
+    <string name="thickness">Thickness</string>
+    <string name="scale">Scale</string>
+    <string-array name="count_down">
+        <item>0</item>
+        <item>&lt;10</item>
+        <item>10-29</item>
+        <item>30-49</item>
+        <item>50-69</item>
+        <item>70-89</item>
+        <item>90-100</item>
+    </string-array>
+    <string-array name="count_down1">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+</resources>
+
+
+
