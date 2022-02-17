@@ -64,7 +64,7 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
 
         val total = (redness + thickness + scale ) * area * multiplier
 
-         holder.totalResult.text = total.toString()
+         holder.totalResult.text = total.toFloat().toString()
 
         //holder.areaResult.setOnClickListener {
             //holder.spinner.onItemSelectedListener = holder
