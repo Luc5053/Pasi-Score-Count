@@ -1,5 +1,6 @@
 package com.luckabamba.pasiscorecount
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,8 @@ import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 
 class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
+
+    lateinit var pasifrag : PasiFragment
 
     var nameTitle = listOf<String>("Head and Neck", "Upper extremities", "Trunk", "Lower extremities")
 
@@ -21,7 +24,8 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
-
+        holder.frag = pasifrag
+        holder.rownumber = position
 
         holder.myTitle.text = nameTitle[position]
         holder.picture.setImageResource(images[position])
@@ -89,13 +93,17 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
 
     class MyViewHolder (view: View) : RecyclerView.ViewHolder(view), AdapterView.OnItemSelectedListener {
+
+        var rownumber = 0
+        lateinit var frag : PasiFragment
+
         var myTitle = view.findViewById<TextView>(R.id.headerTitleTV)
         var picture = view.findViewById<ImageView>(R.id.pasiImageView)
 
-        val spinner: Spinner = view.findViewById<Spinner>(R.id.areaTV)
-        val spinner1: Spinner = view.findViewById<Spinner>(R.id.rednessTV)
-        val spinner2: Spinner = view.findViewById<Spinner>(R.id.thicknessTV)
-        val spinner3: Spinner = view.findViewById<Spinner>(R.id.scaleTV)
+        val spinner: Spinner = view.findViewById<Spinner>(R.id.resultAreaTV)
+        val spinner1: Spinner = view.findViewById<Spinner>(R.id.resultRednessTV)
+        val spinner2: Spinner = view.findViewById<Spinner>(R.id.resultThicknessTV)
+        val spinner3: Spinner = view.findViewById<Spinner>(R.id.resultScaleTV)
 
 
 
@@ -105,6 +113,24 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
         override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
 
+            Log.i("LUCDEBUG", "ITEM SELECTED")
+
+            if(parent.id == R.id.resultAreaTV)
+            {
+                frag.alldata[rownumber].percent = pos
+            }
+            if(parent.id == R.id.resultRednessTV)
+            {
+                frag.alldata[rownumber].redness = pos
+            }
+            if(parent.id == R.id.resultThicknessTV)
+            {
+                frag.alldata[rownumber].thickness = pos
+            }
+            if(parent.id == R.id.resultScaleTV)
+            {
+                frag.alldata[rownumber].scale = pos
+            }
 
         }
 

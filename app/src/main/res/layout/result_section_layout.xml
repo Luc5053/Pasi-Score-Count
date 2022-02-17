@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="180dp"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="10dp">
 
@@ -21,15 +21,15 @@
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@android:color/holo_red_light"
         android:backgroundTint="@color/whiteLightGray"
         android:fontFamily="serif"
@@ -38,26 +38,30 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/resultAreaTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTitleTV" />
 
     <TextView
-        android:id="@+id/areaTV"
-        android:layout_width="85dp"
+        android:id="@+id/resultAreaTV"
+        android:layout_width="80dp"
         android:layout_height="38dp"
         android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/rednessTV"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/resultRednessTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headerTitleTV" />
 
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
-        android:layout_marginStart="4dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:fontFamily="serif"
         android:padding="10dp"
@@ -65,28 +69,31 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/resultRednessTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
-        android:id="@+id/rednessTV"
-        android:layout_width="85dp"
+        android:id="@+id/resultRednessTV"
+        android:layout_width="80dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="5dp"
-        android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/thicknessTV"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/resultThicknessTV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/areaTV" />
+        app:layout_constraintTop_toBottomOf="@+id/resultAreaTV" />
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:fontFamily="serif"
         android:padding="10dp"
@@ -94,27 +101,31 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/resultThicknessTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
-        android:id="@+id/thicknessTV"
-        android:layout_width="85dp"
+        android:id="@+id/resultThicknessTV"
+        android:layout_width="80dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:padding="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/scaleTV"
+        android:text="0"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/resultScaleTV"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rednessTV" />
+        app:layout_constraintTop_toBottomOf="@+id/resultRednessTV" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:fontFamily="serif"
         android:padding="10dp"
@@ -122,52 +133,63 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/resultScaleTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
-        android:id="@+id/scaleTV"
-        android:layout_width="85dp"
+        android:id="@+id/resultScaleTV"
+        android:layout_width="80dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
         android:background="@color/whiteLightGray"
         android:padding="10dp"
+        android:text="0"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/thicknessTV" />
+        app:layout_constraintTop_toBottomOf="@+id/resultThicknessTV" />
 
     <TextView
         android:id="@+id/textView7"
-        android:layout_width="80dp"
+        android:layout_width="0dp"
         android:layout_height="38dp"
         android:layout_marginStart="5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/whiteLightGray"
+        android:layout_marginEnd="5dp"
+        android:background="@color/darkGray"
         android:fontFamily="serif"
         android:padding="10dp"
-        android:text="@string/scale"
+        android:text="@string/total"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@+id/totalTV"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <TextView
         android:id="@+id/totalTV"
-        android:layout_width="85dp"
+        android:layout_width="80dp"
         android:layout_height="38dp"
-        android:layout_marginEnd="5dp"
         android:layout_marginTop="5dp"
-        android:background="@color/whiteLightGray"
+        android:layout_marginEnd="5dp"
+        android:background="@color/darkGray"
         android:padding="10dp"
+        android:text="0"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scaleTV" />
+        app:layout_constraintTop_toBottomOf="@+id/resultScaleTV" />
 
     <ImageView
         android:id="@+id/pasiImageView"
-        android:layout_width="155dp"
+        android:layout_width="0dp"
         android:layout_height="135dp"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
         android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

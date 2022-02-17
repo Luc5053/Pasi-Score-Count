@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 
 class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
 
+    lateinit var resultfrag : ResultFragment
+
     var nameTitle = listOf<String>("Head and Neck", "Upper extremities", "Trunk", "Lower extremities")
 
     private var images = intArrayOf(R.drawable.pasi_head, R.drawable.pasi_arms, R.drawable.pasi_trunk,R.drawable.pasi_legs, )
@@ -23,66 +25,54 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
+        val countdown = resultfrag.requireContext().resources.getStringArray(R.array.count_down).toList()
+
         holder.myTitle.text = nameTitle[position]
         holder.picture.setImageResource(images[position])
-        holder.areaResult.setOnClickListener {
-            holder.areaResult.text
+        //holder.areaResult.text = countdown[resultfrag.alldata[position].percent]
+        holder.areaResult.text = resultfrag.alldata[position].percent.toString()
+        holder.rednessResult.text = resultfrag.alldata[position].redness.toString()
+        holder.thicknessResult.text = resultfrag.alldata[position].thickness.toString()
+        holder.scaleResult.text = resultfrag.alldata[position].scale.toString()
 
+        holder.totalResult.text = nameTitle[position]
+
+        val area = resultfrag.alldata[position].percent
+        val redness = resultfrag.alldata[position].redness
+        val thickness = resultfrag.alldata[position].thickness
+        val scale = resultfrag.alldata[position].scale
+
+
+        var multiplier = 0.0
+        if(position == 0)
+        {
+            multiplier = 0.1
+        }
+        if(position == 1)
+        {
+            multiplier = 0.2
+        }
+        if(position == 2)
+        {
+            multiplier = 0.3
+        }
+        if(position == 3)
+        {
+            multiplier = 0.4
         }
 
 
-/*
-        holder.spinner.onItemSelectedListener = holder
-        ArrayAdapter.createFromResource(
-            holder.itemView.context,
-            R.array.count_down,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            holder.spinner.adapter = adapter
-        }
+        val total = (redness + thickness + scale ) * area * multiplier
 
-        holder.spinner1.onItemSelectedListener = holder
-        ArrayAdapter.createFromResource(
-            holder.itemView.context,
-            R.array.count_down1,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            holder.spinner1.adapter = adapter
-        }
+         holder.totalResult.text = total.toString()
 
-        holder.spinner2.onItemSelectedListener = holder
-        ArrayAdapter.createFromResource(
-            holder.itemView.context,
-            R.array.count_down1,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            holder.spinner2.adapter = adapter
-        }
+        //holder.areaResult.setOnClickListener {
+            //holder.spinner.onItemSelectedListener = holder
+        //}
 
-        holder.spinner3.onItemSelectedListener = holder
-        ArrayAdapter.createFromResource(
-            holder.itemView.context,
-            R.array.count_down1,
-            android.R.layout.simple_spinner_item
-        ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
-            adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
-            holder.spinner3.adapter = adapter
-        }
-
-
- */
     }
+
+
 
     override fun getItemCount(): Int {
         return nameTitle.size
@@ -95,11 +85,10 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
         var myTitle = view.findViewById<TextView>(R.id.headerTitleTV)
         var picture = view.findViewById<ImageView>(R.id.pasiImageView)
 
-
-        val areaResult: TextView = view.findViewById<TextView>(R.id.areaTV)
-        val rednessResult: TextView = view.findViewById<TextView>(R.id.rednessTV)
-        val thicknessResult: TextView = view.findViewById<TextView>(R.id.thicknessTV)
-        val scaleResult: TextView = view.findViewById<TextView>(R.id.scaleTV)
+        val areaResult: TextView = view.findViewById<TextView>(R.id.resultAreaTV)
+        val rednessResult: TextView = view.findViewById<TextView>(R.id.resultRednessTV)
+        val thicknessResult: TextView = view.findViewById<TextView>(R.id.resultThicknessTV)
+        val scaleResult: TextView = view.findViewById<TextView>(R.id.resultScaleTV)
         val totalResult: TextView = view.findViewById<TextView>(R.id.totalTV)
 
 
@@ -108,7 +97,6 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
 
         override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
 
-
         }
 
         override fun onNothingSelected(parent: AdapterView<*>) {
@@ -116,6 +104,5 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
         }
 
     }
-
 
 }
