@@ -15,6 +15,11 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
     private var images = intArrayOf(R.drawable.pasi_head, R.drawable.pasi_arms, R.drawable.pasi_trunk,R.drawable.pasi_legs, )
 
+    var refText = listOf<String>("Enter skin area involved (palm method) as well as redness, thickness and scale grades for the head and neck.",
+    "Enter skin area involved (palm method) as well as redness, thickness and scale grades for the arms.",
+    "Enter skin area involved (palm method) as well as redness, thickness and scale grades for the trunk. Include axillae and groin.",
+    "Enter skin area involved (palm method) as well as redness, thickness and scale grades for the legs. Include buttocks.")
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val vh = MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.section_layout, parent, false))
@@ -29,6 +34,7 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
         holder.myTitle.text = nameTitle[position]
         holder.picture.setImageResource(images[position])
+        holder.theRef.text = refText[position]
 
 
         holder.spinner.onItemSelectedListener = holder
@@ -99,6 +105,7 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
         var myTitle = view.findViewById<TextView>(R.id.headerTitleTV)
         var picture = view.findViewById<ImageView>(R.id.pasiImageView)
+        var theRef = view.findViewById<TextView>(R.id.myRef)
 
         val spinner: Spinner = view.findViewById<Spinner>(R.id.resultAreaTV)
         val spinner1: Spinner = view.findViewById<Spinner>(R.id.resultRednessTV)
