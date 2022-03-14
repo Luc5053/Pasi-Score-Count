@@ -30,6 +30,7 @@ class PasiFragment : Fragment() {
     val rfrag = ResultFragment()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -74,18 +75,17 @@ class PasiFragment : Fragment() {
  */
         }
 
+        view.findViewById<Button>(R.id.readMeBtn).setOnClickListener {
+            var readMeFrag = ReadMeFragment()
+            requireActivity().supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView, readMeFrag).addToBackStack(null).commit()
+        }
+
 
         val fancyRecview = view.findViewById<RecyclerView>(R.id.pastestRV)
 
+
         fancyRecview.layoutManager = LinearLayoutManager(context)
         fancyRecview.adapter = pasiadapter
-
-
-
-
-
-
-
 
     }
 

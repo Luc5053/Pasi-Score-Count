@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="spinnerTheme">
-        <item name="android:background">@color/teal_200</item>
+        <item name="android:background">@color/white</item>
         <item name="android:textColor">@android:color/black</item>
 
         <!-- this is for api 19 text color -->
         <item name="android:color">@android:color/black</item>
-    </style>e>
+    </style>
+    <style name="text">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/purple_700</item>
+    </style>
 
 </resources>
