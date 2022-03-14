@@ -24,20 +24,20 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
     "Enter skin area involved as well as redness, thickness and scale grades for the trunk. Include axillae and groin.",
     "Enter skin area involved as well as redness, thickness and scale grades for the legs. Include buttocks.")
 
-    internal var conditionType = arrayOf("Grading(Erythema)", " 0 No redness", " 1 Light red",
+    internal var conditionType = arrayOf("Erythema", " 0 No redness", " 1 Light red",
         " 2 Red, but not Deep Red", " 3 Very Red", " 4 Extremely Red")
     internal var images1 =
         intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.red_0, R.drawable.red_1, R.drawable.red_2, R.drawable.red_3, R.drawable.red_4)
 
-    internal var conditionType1 = arrayOf("Grading(Induration)", "0 No thickness", "1 Mild",
+    internal var conditionType1 = arrayOf("Induration", "0 No thickness", "1 Mild",
         "2 Moderate", "3 Severe", "4 Very severe")
 
     internal var images2 =
         intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.thick_0, R.drawable.thick_1, R.drawable.thick_2, R.drawable.thick_3, R.drawable.thick_4)
 
 
-    internal var conditionType2 = arrayOf("Grading Scales", "0 No Scale", "1 Mainly fine scale, some of lesion covered",
-    "2 Coarser, thin scale, most of lesion covered", "3 Coarser, thick scale, most of lesion covered, rough", "4 Very thick scale, all of lesion covered, very rough")
+    internal var conditionType2 = arrayOf("Desquamation", "0 No Scale", "1 Mainly fine scale, some of lesion covered",
+    "2 Coarser, thin scale, most of lesion covered", "3 Coarser, thick scale, most of lesion covered", "4 Very thick scale, all of lesion covered")
     internal var images3 =
         intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.scale_0, R.drawable.scale_1, R.drawable.scale_2, R.drawable.scale_3, R.drawable.scale_4)
 

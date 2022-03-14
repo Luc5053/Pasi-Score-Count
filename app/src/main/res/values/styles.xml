@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="spinnerTheme">
-        <item name="android:background">@color/white</item>
+        <item name="android:background">@color/teal_200</item>
         <item name="android:textColor">@android:color/black</item>
 
         <!-- this is for api 19 text color -->
