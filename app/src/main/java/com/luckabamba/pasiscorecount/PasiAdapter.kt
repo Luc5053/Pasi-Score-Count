@@ -24,22 +24,22 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
     "Enter skin area involved as well as redness, thickness and scale grades for the trunk. Include axillae and groin.",
     "Enter skin area involved as well as redness, thickness and scale grades for the legs. Include buttocks.")
 
-    internal var conditionType = arrayOf("Erythema", " 0 No redness", " 1 Light red",
-        " 2 Red, but not Deep Red", " 3 Very Red", " 4 Extremely Red")
+    internal var conditionType = arrayOf("0: No redness", "1: Light red",
+        "2: Red, but not Deep Red", "3: Very Red", "4: Extremely Red")
     internal var images1 =
-        intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.red_0, R.drawable.red_1, R.drawable.red_2, R.drawable.red_3, R.drawable.red_4)
+        intArrayOf(R.drawable.red_0, R.drawable.red_1, R.drawable.red_2, R.drawable.red_3, R.drawable.red_4)
 
-    internal var conditionType1 = arrayOf("Induration", "0 No thickness", "1 Mild",
-        "2 Moderate", "3 Severe", "4 Very severe")
+    internal var conditionType1 = arrayOf("0: No Induration", "1: Mild Induration",
+        "2: Moderate Induration", "3: Severe Induration", "4: Very severe Induration")
 
     internal var images2 =
-        intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.thick_0, R.drawable.thick_1, R.drawable.thick_2, R.drawable.thick_3, R.drawable.thick_4)
+        intArrayOf(R.drawable.thick_0, R.drawable.thick_1, R.drawable.thick_2, R.drawable.thick_3, R.drawable.thick_4)
 
 
-    internal var conditionType2 = arrayOf("Desquamation", "0 No Scale", "1 Mainly fine scale, some of lesion covered",
-    "2 Coarser, thin scale, most of lesion covered", "3 Coarser, thick scale, most of lesion covered", "4 Very thick scale, all of lesion covered")
+    internal var conditionType2 = arrayOf("0: No Scale", "1: Mainly fine scale, some of lesion covered",
+    "2: Coarser, thin scale, most of lesion covered", "3: Coarser, thick scale, most of lesion covered", "4: Very thick scale, all of lesion covered")
     internal var images3 =
-        intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.scale_0, R.drawable.scale_1, R.drawable.scale_2, R.drawable.scale_3, R.drawable.scale_4)
+        intArrayOf(R.drawable.scale_0, R.drawable.scale_1, R.drawable.scale_2, R.drawable.scale_3, R.drawable.scale_4)
 
 
 override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -106,6 +106,8 @@ override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.spinner3.adapter = adapter
     }
 
+
+
     val customAdapter = InfoAdapter(holder.itemView.context, images1, conditionType)
     holder.spin.adapter = customAdapter
     val customAdapter1 = InfoAdapter(holder.itemView.context, images2, conditionType1)
@@ -139,9 +141,10 @@ class MyViewHolder (view: View) : RecyclerView.ViewHolder(view), AdapterView.OnI
     val spinner2: Spinner = view.findViewById<Spinner>(R.id.resultThicknessTV)
     val spinner3: Spinner = view.findViewById<Spinner>(R.id.resultScaleTV)
 
-    val spin = view.findViewById<View>(R.id.spinnerImgRed) as Spinner
-    val spin1 = view.findViewById<View>(R.id.spinnerImgThick) as Spinner
-    val spin2 = view.findViewById<View>(R.id.spinnerImgScale) as Spinner
+    val spin = view.findViewById<View>(R.id.resultRednessTV) as Spinner
+    val spin1 = view.findViewById<View>(R.id.resultThicknessTV) as Spinner
+    val spin2 = view.findViewById<View>(R.id.resultScaleTV) as Spinner
+
 
         override fun onItemSelected(parent: AdapterView<*>, view: View?, pos: Int, id: Long) {
 
@@ -165,3 +168,5 @@ class MyViewHolder (view: View) : RecyclerView.ViewHolder(view), AdapterView.OnI
 
     }
 }
+
+

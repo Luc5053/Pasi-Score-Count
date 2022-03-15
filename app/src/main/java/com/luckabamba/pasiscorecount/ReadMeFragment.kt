@@ -48,5 +48,8 @@ class ReadMeFragment : Fragment() {
         //fancyrecview.layoutManager = GridLayoutManager(context,2)
         fancyRecview.layoutManager = LinearLayoutManager(context)
         fancyRecview.adapter = readMeAdapter
+
+
+
     }
 }
