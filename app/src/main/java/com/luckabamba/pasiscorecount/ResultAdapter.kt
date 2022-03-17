@@ -12,7 +12,7 @@ class ResultAdapter(): RecyclerView.Adapter<ResultAdapter.MyViewHolder>() {
 
     var nameTitle = listOf<String>("Head and Neck", "Upper extremities", "Trunk", "Lower extremities")
 
-    private var images = intArrayOf(R.drawable.pasi_head, R.drawable.pasi_arms, R.drawable.pasi_trunk,R.drawable.pasi_legs, )
+    private var images = intArrayOf(R.drawable.pasi_gray_red_smaller_head, R.drawable.pasi_gray_red_smaller_arms, R.drawable.pasi_gray_red_smaller_trunk,R.drawable.pasi_gray_red_smaller_legs, )
 
 
 

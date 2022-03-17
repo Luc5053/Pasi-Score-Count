@@ -17,26 +17,27 @@ class PasiAdapter() : RecyclerView.Adapter<PasiAdapter.MyViewHolder>() {
 
     var nameTitle = listOf<String>("Head and Neck", "Upper extremities", "Trunk", "Lower extremities")
 
-    private var images = intArrayOf(R.drawable.pasi_head, R.drawable.pasi_arms, R.drawable.pasi_trunk,R.drawable.pasi_legs, )
+    private var images = intArrayOf(R.drawable.pasi_gray_red_smaller_head, R.drawable.pasi_gray_red_smaller_arms, R.drawable.pasi_gray_red_smaller_trunk,R.drawable.pasi_gray_red_smaller_legs, )
 
-    var refText = listOf<String>("Enter skin area involved as well as redness, thickness and scale grades for the head and neck.",
-    "Enter skin area involved as well as redness, thickness and scale grades for the arms.",
-    "Enter skin area involved as well as redness, thickness and scale grades for the trunk. Include axillae and groin.",
-    "Enter skin area involved as well as redness, thickness and scale grades for the legs. Include buttocks.")
+    var refText = listOf<String>("Assess psoriasis lesions for the head and neck.",
+    "Assess psoriasis lesions for the arms.",
+    "Assess psoriasis lesions for the trunk. Include axillae and groin.",
+    "Assess psoriasis lesions for the legs. Include buttocks.")
+
 
     internal var conditionType = arrayOf("0: No redness", "1: Light red",
         "2: Red, but not Deep Red", "3: Very Red", "4: Extremely Red")
     internal var images1 =
         intArrayOf(R.drawable.red_0, R.drawable.red_1, R.drawable.red_2, R.drawable.red_3, R.drawable.red_4)
 
-    internal var conditionType1 = arrayOf("0: No Induration", "1: Mild Induration",
-        "2: Moderate Induration", "3: Severe Induration", "4: Very severe Induration")
+    internal var conditionType1 = arrayOf("0: No induration", "1: Mild induration",
+        "2: Moderate induration", "3: Severe induration", "4: Very severe induration")
 
     internal var images2 =
         intArrayOf(R.drawable.thick_0, R.drawable.thick_1, R.drawable.thick_2, R.drawable.thick_3, R.drawable.thick_4)
 
 
-    internal var conditionType2 = arrayOf("0: No Scale", "1: Mainly fine scale, some of lesion covered",
+    internal var conditionType2 = arrayOf("0: No scale", "1: Mainly fine scale, some of lesion covered",
     "2: Coarser, thin scale, most of lesion covered", "3: Coarser, thick scale, most of lesion covered", "4: Very thick scale, all of lesion covered")
     internal var images3 =
         intArrayOf(R.drawable.scale_0, R.drawable.scale_1, R.drawable.scale_2, R.drawable.scale_3, R.drawable.scale_4)
@@ -110,6 +111,7 @@ override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
 
     val customAdapter = InfoAdapter(holder.itemView.context, images1, conditionType)
     holder.spin.adapter = customAdapter
+
     val customAdapter1 = InfoAdapter(holder.itemView.context, images2, conditionType1)
     holder.spin1.adapter = customAdapter1
 
