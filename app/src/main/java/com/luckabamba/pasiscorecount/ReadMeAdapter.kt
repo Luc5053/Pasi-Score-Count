@@ -28,7 +28,8 @@ class ReadMeAdapter() : RecyclerView.Adapter<MyViewHolder>() {
             "The second step in turn consists of assessing lesions' erythema (redness), induration (thickness) and scaling.\n" +
             "\n" +
             "All calculations are combined into a single score (PASI Score) in the range of 0 (no psoriasis on the body) and up to 72 (the most severe case of psoriasis).\n" +
-            "Typically, the PASI would be calculated before, during and after a treatment period in order to determine how well psoriasis responds to the treatment.")
+            "Typically, the PASI would be calculated before, during and after a treatment period in order to determine how well psoriasis responds to the treatment.\n" + "\n" +  "\n" +
+            "I would like to thank\n" + "\n" + "\n" + "Dr. Lisa Karin Alenmyr,\n" + "for providing us with her professional assistance during the all project, and the approval of the final Application's design with functionality.")
     /*
     internal var images1 =
         intArrayOf(R.drawable.ic_baseline_info_24, R.drawable.red_0, R.drawable.red_1, R.drawable.red_2, R.drawable.red_3, R.drawable.red_4)
