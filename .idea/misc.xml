@@ -15,8 +15,13 @@
         <entry key="app/src/main/res/layout/result_section_layout.xml" value="0.35260416666666666" />
         <entry key="app/src/main/res/layout/section_layout.xml" value="0.2894736842105263" />
         <entry key="app/src/main/res/layout/spinner_custom_layout.xml" value="0.353125" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.298" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.298" />
       </map>
     </option>
+  </component>
+  <component name="ProjectPlainTextFileTypeManager">
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values/ic_launcher_background.xml" />
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
